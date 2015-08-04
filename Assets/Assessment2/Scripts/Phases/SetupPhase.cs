@@ -8,6 +8,7 @@ public class SetupPhase : MonoBehaviour {
 	public GameObject[] Characters;
 	public GameObject[] Enemies;
 	public GameObject EnemyHolder;
+	public GameObject EnemyText;
 
 	public CharacterSelected _charSelected;
 
@@ -78,7 +79,7 @@ public class SetupPhase : MonoBehaviour {
 
 	void BuildEnemies(){
 		EnemyHolder.SetActive(true);
-
+		EnemyText.SetActive(true);
 		Enemies = GameObject.FindGameObjectsWithTag("Enemy");
 	}
 

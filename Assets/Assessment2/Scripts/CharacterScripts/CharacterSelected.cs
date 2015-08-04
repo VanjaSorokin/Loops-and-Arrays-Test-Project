@@ -50,8 +50,4 @@ public class CharacterSelected : MonoBehaviour {
 		Characters[0].renderer.material.color = OriginalColor;
 		Characters[1].renderer.material.color = OriginalColor;
 	}
-
-	void OnGUI(){
-
-	}
 }

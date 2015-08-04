@@ -24,7 +24,7 @@ public class SetupPhase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// This should print to player not to console 
-		print ("Some Introductory Text");
+		print ("Hello and welcome to Cyber Arena 20XX: Clans Wars!!!\nHere you will build your clan\nand fight to rule the Cyber Arena!");
 		_charSelected = this.gameObject.GetComponent<CharacterSelected>();
 
 		TeamName = "Michowned";
@@ -85,5 +85,6 @@ public class SetupPhase : MonoBehaviour {
 
 	void RemoveGui(){
 		ButtonHolder.SetActive(false);
+		Camera.main.SendMessage("Phase2");
 	}
 }

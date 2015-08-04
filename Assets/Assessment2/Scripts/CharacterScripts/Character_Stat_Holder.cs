@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Character_Stat_Holder : MonoBehaviour {
 
+	//This script is here to hold all of the character stats in one place,
+	//so that it can be referenced at any time.
 	public GameObject[] Characters;
 	public CharacterStats _Char1Stats;
 	public CharacterStats _Char2Stats;
@@ -60,6 +62,7 @@ public class Character_Stat_Holder : MonoBehaviour {
 	
 	}
 
+	//*Change to ForLoop*
 	void Character1Stats (){
 		Char1Name = _Char1Stats.name;
 		Char1Stamina = _Char1Stats.stamina;

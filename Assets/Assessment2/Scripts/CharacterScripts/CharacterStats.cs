@@ -25,6 +25,8 @@ public class CharacterStats : MonoBehaviour {
 	//The maximum base damage for this character
 	public int maxDamage;
 
+	public int attackTurn;
+
 	public bool CanHeal = false;
 
 
@@ -43,6 +45,7 @@ public class CharacterStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CharacterCheck();
+		AssignDamgePotential();
 	}
 
 	//This Checks which Character this is, and assigns stats according to Character Type.
@@ -87,5 +90,12 @@ public class CharacterStats : MonoBehaviour {
 		if(this.gameObject == Characters[2]){
 			Camera.main.SendMessage ("SelectCharThree");
 		}
+	}
+
+	void AssignDamgePotential(){
+		maxDamage = (((energy + strength)*stamina)/3);
+		//I used the max damge in the second eqaution to scale the damages together.
+		//I also added -1 to the end of this sum so that it's impossible to be higher then the maxDamage
+		minDamage = ((strength + maxDamage /3 )- 1);
 	}
 }

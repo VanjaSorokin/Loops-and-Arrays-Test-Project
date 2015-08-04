@@ -10,7 +10,7 @@ public class PhaseController : MonoBehaviour {
 	public bool runningPhaseOne = false;	
 	public bool runningPhaseTwo = false;
 	public bool runningPhaseThree = false;
-	
+
 
 
 	// Use this for initialization
@@ -20,20 +20,7 @@ public class PhaseController : MonoBehaviour {
 	
 	// Here we are running the phases only if they are active, and the other two are not.
 	void Update () {
-		if(phaseOneIsActive == true && !phaseTwoIsActive && !phaseThreeIsActive)
-		{
-			Phase1();
-		}
 
-		if(phaseTwoIsActive == true && !phaseOneIsActive && !phaseThreeIsActive)
-		{
-			Phase2();
-		}
-
-		if(phaseThreeIsActive == true && !phaseOneIsActive && !phaseTwoIsActive)
-		{
-			Phase3();
-		}
 	}
 
 	//Phase One is the Setup Phase

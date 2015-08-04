@@ -25,7 +25,9 @@ public class EnemyStats : MonoBehaviour {
 	
 	//The maximum base damage for this character
 	public int maxDamage;
-	
+
+	public int attackTurn;
+
 	public bool CanHeal = false;
 
 	public EnemySelected _enemySelected;
@@ -40,7 +42,7 @@ public class EnemyStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		AssignDamgePotential();
 	}
 	
 	//this is how you select your character
@@ -54,5 +56,10 @@ public class EnemyStats : MonoBehaviour {
 		if(this.gameObject == Enemies[2]){
 			EnemyHolder.gameObject.SendMessage ("SelectEnemyThree");
 		}
+	}
+
+	void AssignDamgePotential(){
+		maxDamage = (((energy + strength)*stamina)/3);
+		minDamage = ((strength + maxDamage /3 )- 1);
 	}
 }

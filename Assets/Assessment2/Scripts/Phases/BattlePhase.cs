@@ -70,13 +70,58 @@ public class BattlePhase : MonoBehaviour {
 														//I need to be able to sort in order, but I can't work out how.
 			CombatPhases = 2;
 		}
+
+		//this phase is the action performing phase. Here they will choose to attack, block, heal, or hold.
 		if(CombatPhases == 2){
 
+			for(int i = 0; i < (Players.Length + Enemies.Length); i++)
+			{
+				ActionToBePerformed = Random.Range (1,5);
+				if(ActionToBePerformed == 1){
+					print ("Someone wants to Attack");
+					//ATTACK
+				}
+				if(ActionToBePerformed == 2){
+					print ("Someone wants to Block");
+					//BLOCK
+				}
+				if(ActionToBePerformed == 3){
+					print ("Someone wants to Heal");
+					//HEAL
+				}
+				if(ActionToBePerformed == 4){
+					print ("Someone wants Hold");
+					//HOLD
+					i--;
+				}
+			}
 
 			print ("running combat phase 2");
+			CombatPhases = 3;
 		}
+
 		if(CombatPhases == 3){
-			
+			for(int i = 0; i < (Players.Length + Enemies.Length); i++)
+			{
+				ActionToBePerformed = Random.Range (1,5);
+				if(ActionToBePerformed == 1){
+					print ("Someone is Attacking");
+					//ATTACK
+				}
+				if(ActionToBePerformed == 2){
+					print ("Someone is Blocking");
+					//BLOCK
+				}
+				if(ActionToBePerformed == 3){
+					print ("Someone is Healing");
+					//HEAL
+				}
+				if(ActionToBePerformed == 4){
+					print ("Someone is Holding");
+					//HOLD
+					i--;
+				}
+			}
 		}
 	}
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class SetupPhase : MonoBehaviour {
 
 	public string TeamName;
@@ -8,10 +9,14 @@ public class SetupPhase : MonoBehaviour {
 
 	public CharacterSelected _charSelected;
 
+
 	// Use this for initialization
 	void Start () {
+		// This should print to player not to console 
 		print ("Some Introductory Text");
 		_charSelected = this.gameObject.GetComponent<CharacterSelected>();
+
+		TeamName = "Michowned";
 
 		Characters = GameObject.FindGameObjectsWithTag("Player");
 
@@ -25,6 +30,7 @@ public class SetupPhase : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CharacterSetup();
+
 	}
 
 
@@ -45,6 +51,5 @@ public class SetupPhase : MonoBehaviour {
 			Characters[2].name = "Godric";
 			
 		}
-
 	}
 }

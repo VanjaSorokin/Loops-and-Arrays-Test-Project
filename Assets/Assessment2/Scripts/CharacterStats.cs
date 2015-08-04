@@ -25,6 +25,8 @@ public class CharacterStats : MonoBehaviour {
 	//The maximum base damage for this character
 	public int maxDamage;
 
+	public bool CanHeal = false;
+
 
 	public CharacterTypes _charTypes;
 	public CharacterSelected _charSelected;
@@ -36,12 +38,6 @@ public class CharacterStats : MonoBehaviour {
 		_charSelected = Camera.main.GetComponent<CharacterSelected>();
 
 		Characters = GameObject.FindGameObjectsWithTag("Player");
-		
-		//sorting alphabetacly would work better here!
-		for(int i = 0; i < Characters.Length; i++)
-		{
-			Debug.Log("Player Number "+i+" is named "+Characters[i].name);
-		}
 	}
 	
 	// Update is called once per frame
@@ -58,6 +54,7 @@ public class CharacterStats : MonoBehaviour {
 			strength = _charTypes.strength;
 			energy = _charTypes.energy;
 			healing = _charTypes.healing;
+			CanHeal = _charTypes.canHeal;
 		}
 		if(_charSelected.character2Selected == true && this.gameObject == Characters[1] && _charTypes.ButtonPressed == true){
 			name = _charTypes.name;
@@ -66,6 +63,7 @@ public class CharacterStats : MonoBehaviour {
 			strength = _charTypes.strength;
 			energy = _charTypes.energy;
 			healing = _charTypes.healing;
+			CanHeal = _charTypes.canHeal;
 		}
 		if(_charSelected.character3Selected == true && this.gameObject == Characters[2] && _charTypes.ButtonPressed == true){
 			name = _charTypes.name;
@@ -74,6 +72,7 @@ public class CharacterStats : MonoBehaviour {
 			strength = _charTypes.strength;
 			energy = _charTypes.energy;
 			healing = _charTypes.healing;
+			CanHeal = _charTypes.canHeal;
 		}
 	}
 

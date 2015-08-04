@@ -6,9 +6,19 @@ public class SetupPhase : MonoBehaviour {
 
 	public string TeamName;
 	public GameObject[] Characters;
+	public GameObject[] Enemies;
+	public GameObject EnemyHolder;
 
 	public CharacterSelected _charSelected;
 
+	public Transform Char1NewTransform;
+	public Transform Char2NewTransform;
+	public Transform Char3NewTransform;
+
+	public GameObject[] Buttons; 
+	public GameObject ButtonHolder;
+
+	
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +29,7 @@ public class SetupPhase : MonoBehaviour {
 		TeamName = "Michowned";
 
 		Characters = GameObject.FindGameObjectsWithTag("Player");
+		Buttons = GameObject.FindGameObjectsWithTag("Button");
 
 		//sorting alphabetacly would work better here!
 		for(int i = 0; i < Characters.Length; i++)
@@ -51,5 +62,27 @@ public class SetupPhase : MonoBehaviour {
 			Characters[2].name = "Godric";
 			
 		}
+	}
+
+	void FinishCreatingTeam(){
+		MovePlayers();
+		BuildEnemies();
+		RemoveGui();
+	}
+
+	void MovePlayers(){
+		Characters[0].transform.position = Char1NewTransform.position;
+		Characters[1].transform.position = Char2NewTransform.position;
+		Characters[2].transform.position = Char3NewTransform.position;
+	}
+
+	void BuildEnemies(){
+		EnemyHolder.SetActive(true);
+
+		Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+	}
+
+	void RemoveGui(){
+		ButtonHolder.SetActive(false);
 	}
 }

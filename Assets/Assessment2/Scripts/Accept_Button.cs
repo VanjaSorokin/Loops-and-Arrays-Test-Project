@@ -20,14 +20,10 @@ public class Accept_Button : MonoBehaviour {
 	// Becuase the strings are not null they are empty space, I've used "" to represent null
 	void Accept () {
 		if (_StatHolder.Char1Name != "" && _StatHolder.Char2Name != "" && _StatHolder.Char3Name != ""){
-
-
-			print ("is working");
-
+			Camera.main.SendMessage("FinishCreatingTeam");
 		}
 
 		else {
-
 			print ("please assign a class to each character");
 		}
 	}

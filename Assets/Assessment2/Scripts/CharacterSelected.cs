@@ -14,13 +14,6 @@ public class CharacterSelected : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Characters = GameObject.FindGameObjectsWithTag("Player");
-		
-		//sorting alphabetacly would work better here!
-		for(int i = 0; i < Characters.Length; i++)
-		{
-			Debug.Log("Player Number "+i+" is named "+Characters[i].name);
-		}
-
 		OriginalColor = Characters[0].renderer.material.color;
 	}
 	
